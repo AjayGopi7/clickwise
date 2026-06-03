@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Hours | ClickWise</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+<div class="nav-left">
+<img src="clickwise_logo.png" class="logo">
+<div>
+<h1>ClickWise</h1>
+<p>Connecting Generations Through Technology</p>
+</div>
+</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="hours.html" class="active"> Log Hours</a>
+<a href="chapter.html">Start a Chapter</a>
+<a href="donate.html">Donate</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<section class="section">
+<div class="section-title">
+<p>Volunteer Dashboard</p>
+<h2>Track your impact.</h2>
+</div>
+
+<div class="grid-2">
+<div class="dashboard-card">
+
+<h3>Log Hours</h3>
+
+<p style="margin-bottom:20px;">
+Submit your volunteer hours using our official form.
+</p>
+
+<a
+href="https://docs.google.com/forms/d/e/1FAIpQLSfNlgkmjgOMone4VEhFwU6pR-YpRcgEozYfe1gxRNK_QqjMGg/viewform?usp=publish-editor"
+target="_blank"
+class="primary-btn">
+Log Hours
+</a>
+
+</div>
+
+<div class="dashboard-card dark-card">
+
+<h3>Check Your Hours</h3>
+
+<p>
+Enter the email address used when submitting volunteer hours.
+</p>
+
+<input
+id="emailLookup"
+type="email"
+placeholder="Email Address"
+style="
+width:100%;
+margin-top:20px;
+padding:16px;
+border-radius:14px;
+border:none;
+font-size:1rem;
+">
+
+<button
+class="primary-btn"
+style="margin-top:15px;"
+onclick="checkHours()">
+View Hours
+</button>
+
+<div
+id="hoursResults"
+style="margin-top:25px;">
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+
+<div class="section-title">
+  <p>Why It Matters</p>
+  <h2>Your hours create real impact.</h2>
+</div>
+
+<div class="grid-3">
+
+  <div class="feature-card">
+    <div class="big-number">1</div>
+    <h3>Help Seniors</h3>
+    <p>
+      Every volunteer hour helps older adults become more
+      confident using technology.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <div class="big-number">2</div>
+    <h3>Earn Service Hours</h3>
+    <p>
+      Track verified volunteer hours for school,
+      honor societies, and community service awards.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <div class="big-number">3</div>
+    <h3>Build Leadership</h3>
+    <p>
+      Gain communication, teaching, and leadership skills
+      while making a meaningful difference.
+    </p>
+  </div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="dashboard-card">
+
+<img src="images/stock1.jpg"
+     alt="Volunteer Workshop"
+     class="impact-image">
+
+<div class="impact-content">
+
+<h2>Technology should be accessible to everyone.</h2>
+
+<p>
+Through ClickWise workshops, volunteers help older adults
+learn smartphones, computers, online safety, and video calling.
+Every hour contributes directly to bridging the digital divide.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+async function checkHours() {
+
+  const email =
+    document.getElementById("emailLookup").value;
+
+  if (!email) {
+    alert("Please enter your email address.");
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbwIXVkfZ-EFIEcjVDKl0Rs491cCjWNHVh9mKAzqSGZUNgdTOrJZQPGT_I9nOYlWvGOK/exec?email=" +
+      encodeURIComponent(email)
+    );
+
+    const data = await response.json();
+
+    document.getElementById("hoursResults").innerHTML = `
+
+      <div style="
+        background:rgba(255,255,255,0.08);
+        border:1px solid rgba(255,255,255,0.15);
+        padding:20px;
+        border-radius:18px;
+        margin-top:10px;
+      ">
+
+        <h2 style="font-size:2rem;">
+          ${data.approved}
+        </h2>
+
+        <p>Approved Hours</p>
+
+        <hr style="margin:20px 0;opacity:.2;">
+
+        <h2 style="font-size:2rem;">
+          ${data.pending}
+        </h2>
+
+        <p>Pending Approval</p>
+
+      </div>
+
+    `;
+
+  } catch(error) {
+
+    console.error(error);
+
+    document.getElementById("hoursResults").innerHTML =
+      "<p>Unable to load hours.</p>";
+
+  }
+
+}
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>
