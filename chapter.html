@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Start a Chapter | Clickwise</title>
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -12,22 +13,32 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<!-- Leaflet -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <nav class="navbar">
+
   <div class="nav-left">
+
     <img src="clickwise_logo.png" class="logo">
 
     <div>
       <h1>Clickwise</h1>
       <p>Connecting Generations Through Technology</p>
     </div>
+
   </div>
 
   <div class="nav-links">
+
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="volunteer.html">Volunteer</a>
@@ -35,99 +46,301 @@
     <a href="chapter.html" class="active">Start a Chapter</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+
   </div>
+
 </nav>
 
-<section class="hero">
 
-<div class="hero-text">
+<!-- HERO -->
 
-<div class="pill">
-Launch a Community Chapter
-</div>
+<section class="hero chapter-hero">
 
-<h1>
-Build something <span>bigger.</span>
-</h1>
+  <div class="hero-text">
 
-<p>
-Bring Clickwise to your school and create real local impact.
-</p>
+    <div class="pill">
+      Launch a Community Chapter
+    </div>
 
-<a href="#application" class="primary-btn">
-Apply to Start a Chapter
-</a>
+    <h1>
+      Build something <span>bigger.</span>
+    </h1>
 
-</div>
+    <p>
+      Bring Clickwise to your school, community, or city and create
+      meaningful digital impact for older adults.
+    </p>
 
-<div class="hero-card">
-<h3>Current Chapters</h3>
-<h2>1</h2>
-<p>Across schools and communities.</p>
-</div>
+    <a href="contact.html" class="primary-btn">
+      Contact Us
+    </a>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <h3>Our Network</h3>
+
+    <h2>3</h2>
+
+    <p>
+      Active chapters across Northern Virginia.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- CHAPTER NETWORK -->
+
+<section class="section chapter-network">
+
+  <div class="section-title">
+
+    <p>Our Chapter Network</p>
+
+    <h2>
+      Impact that starts local.
+    </h2>
+
+  </div>
+
+
+  <div class="chapter-map-wrapper">
+
+    <div id="chapterMap"></div>
+
+    <div class="map-overlay">
+
+      <div class="map-status">
+        <span class="status-dot"></span>
+        Active Chapters
+      </div>
+
+      <h3>Clickwise Chapters</h3>
+
+      <p>
+        Explore our growing network and discover where
+        Clickwise is making an impact.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- LOCATION CARDS -->
+
+  <div class="chapter-locations">
+
+    <div class="chapter-location-card">
+
+      <div class="location-number">
+        01
+      </div>
+
+      <div>
+        <span>Virginia</span>
+        <h3>Fairfax</h3>
+        <p>Clickwise Chapter</p>
+      </div>
+
+    </div>
+
+
+    <div class="chapter-location-card">
+
+      <div class="location-number">
+        02
+      </div>
+
+      <div>
+        <span>Virginia</span>
+        <h3>Tysons</h3>
+        <p>Clickwise Chapter</p>
+      </div>
+
+    </div>
+
+
+    <div class="chapter-location-card">
+
+      <div class="location-number">
+        03
+      </div>
+
+      <div>
+        <span>Virginia</span>
+        <h3>Chantilly</h3>
+        <p>Clickwise Chapter</p>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
-<section class="section" id="application">
 
-<div class="section-title">
-<p>Chapter Application</p>
-<h2>Bring Clickwise to your school.</h2>
-</div>
 
-<div class="dashboard-card">
+<!-- START A CHAPTER -->
 
-<form
-action="https://formspree.io/f/xgoqbakj"
-method="POST"
-class="form-group">
+<section class="section chapter-cta-section">
 
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-required>
+  <div class="chapter-cta">
 
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
+    <div>
 
-<input
-type="text"
-name="school"
-placeholder="School Name"
-required>
+      <div class="pill">
+        Start Something New
+      </div>
 
-<input
-type="text"
-name="city"
-placeholder="City / State"
-required>
+      <h2>
+        Want to bring Clickwise<br>
+        to your community?
+      </h2>
 
-<textarea
-name="reason"
-rows="6"
-placeholder="Why do you want to start a Clickwise chapter?"
-required></textarea>
+      <p>
+        We're always looking for students and community leaders
+        who want to bring digital confidence to older adults
+        in their area.
+      </p>
 
-<input
-type="hidden"
-name="_next"
-value="thankyou.html">
+    </div>
 
-<button
-type="submit"
-class="primary-btn">
-Submit Application
-</button>
 
-</form>
+    <div class="chapter-cta-action">
 
-</div>
+      <p>
+        Interested in starting a chapter?
+      </p>
+
+      <a href="contact.html" class="primary-btn">
+        Get in Touch →
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
+
+
+
+<!-- LEAFLET -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+<script>
+
+const map = L.map('chapterMap', {
+  zoomControl: false,
+  worldCopyJump: true
+}).setView([38.8462, -77.3064], 10);
+
+
+L.control.zoom({
+  position: 'bottomright'
+}).addTo(map);
+
+
+// Map tiles
+
+L.tileLayer(
+  'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  {
+    attribution:
+      '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }
+).addTo(map);
+
+
+// Custom marker
+
+const chapterIcon = L.divIcon({
+
+  className: 'custom-marker',
+
+  html: `
+    <div class="marker-pulse"></div>
+    <div class="marker-core"></div>
+  `,
+
+  iconSize: [30, 30],
+
+  iconAnchor: [15, 15]
+
+});
+
+
+// Chapter locations
+
+const chapters = [
+
+  {
+    name: "Fairfax",
+    state: "Virginia",
+    coordinates: [38.8462, -77.3064]
+  },
+
+  {
+    name: "Tysons",
+    state: "Virginia",
+    coordinates: [38.9187, -77.2311]
+  },
+
+  {
+    name: "Chantilly",
+    state: "Virginia",
+    coordinates: [38.8943, -77.4311]
+  }
+
+];
+
+
+// Add markers
+
+chapters.forEach(chapter => {
+
+  L.marker(
+    chapter.coordinates,
+    {
+      icon: chapterIcon
+    }
+  )
+
+  .addTo(map)
+
+  .bindPopup(`
+
+    <div class="chapter-popup">
+
+      <div class="popup-label">
+        CLICKWISE CHAPTER
+      </div>
+
+      <h3>${chapter.name}</h3>
+
+      <p>${chapter.state}</p>
+
+      <div class="popup-status">
+        <span></span>
+        Active Chapter
+      </div>
+
+    </div>
+
+  `);
+
+});
+
+</script>
+
 
 <script src="script.js"></script>
 
